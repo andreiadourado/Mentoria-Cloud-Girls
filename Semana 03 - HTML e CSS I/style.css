@@ -1,0 +1,61 @@
+body{/*podemos editar o estilo dentro de cada tag usada*/
+	/*background: #CCCCCC cor em todo fundo do body*/
+}
+
+.principal{
+	background:#CCCCCC;
+	padding: 20px;
+}
+
+.tituloCentralizado{
+	text-align: center;
+	/*height: 150px;
+	border: 10px solid #000000; 
+	padding: 20px; espaçamento interno
+	margin: 40px; espaçamento externo*/
+}
+
+
+#banner{
+	width: 100%;
+}
+
+p {/*todos os parágrafos centralizados com fundo cinza*/
+	text-align: center;
+	/*background: #CCCCCC*/
+}
+
+#missao {/*acessando o id da tag que quero modificar -  chamada com #*/
+
+}
+
+
+em strong{ /*apenas o strong que está dentro do em - marcação em cascata!*/
+	color: red /*ou #FF0000*/
+}
+
+
+
+.beneficios{
+	background: white;
+	padding: 20px;
+}
+
+ul{
+	display: inline-block;/*coloca o texto e a imagem lado a lado*/
+	vertical-align:top; /*organiza os blocos de cima pra baixo*/
+	width: 20%;
+	margin-right: 15%;
+	
+}
+
+.itens{ /*classe é chamada com um ponto*/
+	font-style: italic
+}
+
+.imagemBeneficios{
+	width:50%;
+}
+
+
+
