@@ -6,11 +6,10 @@ botaoAdicionar.addEventListner('clik',function(event){ //"escutar" o clique do u
 	//console.log('Oi eu sou o botao e fui clicado'); //ação que queremos no lugar do comportamento padrão
 	
 	var form = document.querySelector('#form-adiciona');
+
+	//acessando os valores dos inputs
+	var paciente = obtemPacienteFormulario(form);
 	
-	var nome = form.nome.value; //acessando os valores dos inputs
-	var peso = form.peso.value;
-	var altura = form.altura.value;
-	var gordura = form.gordura.value;
 	
 	//criar elemento no javascript para levar pro html (nova linha da tabela)
 	
@@ -44,3 +43,21 @@ botaoAdicionar.addEventListner('clik',function(event){ //"escutar" o clique do u
 	
 }); 
 
+function obtemPacienteFormulario(form){
+
+	var paciente{ //criando um objeto
+		nome : form.nome.value; 
+		peso : form.peso.value;
+		altura : form.altura.value;
+		gordura : form.gordura.value;
+		imc: calculaImc(form.peso.value, form.altura.value);
+	}	
+	return paciente;
+}	
+
+
+
+
+
+
+	
