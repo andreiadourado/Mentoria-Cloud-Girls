@@ -10,38 +10,18 @@ botaoAdicionar.addEventListner('clik',function(event){ //"escutar" o clique do u
 	//acessando os valores dos inputs
 	var paciente = obtemPacienteFormulario(form);
 	
-	
-	//criar elemento no javascript para levar pro html (nova linha da tabela)
-	
-	var pacienteTr = document.createElement('tr');
-	var nomeTd = document.createElement('td');
-	var alturaTd = document.createElement('td');
-	var pesoTd = document.createElement('td');
-	var gorduraTd = document.createElement('td');
-	var imcTd = document.createElement('td');
-	
-	//passando os valores de cada coluna
-	nomeTd.textContext = nome;
-	pesoTd.textContext = peso;
-	alturaTd.textContext = altura;
-	gorduraTd.textContext = gordura;
-	imcTd.textContext = calculaImc(peso,altura);
-	
-	//colocar como elementos filhos
-	pacienteTr.appendChild(nomeTd);
-	pacienteTr.appendChild(alturaTd);
-	pacienteTr.appendChild(pesoTd);
-	pacienteTr.appendChild(gorduraTd);
-	pacienteTr.appendChild(imcTd);
+	//criar tr e td do paciente
+	var pacienteTr = montaTr(paciente);
 	
 	//inserindo a linha criada na tabela
   	var tabela = document.querySelector('#tabela-pacientes');
 	tabela.appendChild(pacienteTr);
-
 	
-
+	form.reset(); //reseta o formulário após o clique
 	
 }); 
+
+
 
 function obtemPacienteFormulario(form){
 
@@ -56,6 +36,32 @@ function obtemPacienteFormulario(form){
 }	
 
 
+function montaTr(paciente){
+	var pacienteTr = document.createElement('tr');
+	pacienteTr.classList.add('paciente'); //mantendo a mesma formatação
+	
+	//criar elemento no javascript para levar pro html (nova linha da tabela)
+	
+	pacienteTr.appendChild(montaTd(paciente.nome,'info-nome'));
+	pacienteTr.appendChild(ontaTd(paciente.peso,'info-peso'));
+	pacienteTr.appendChild(montaTd(paciente.naltura'info-altura'));
+	pacienteTr.appendChild(montaTd(paciente.gordura,'info-gordura'));
+	pacienteTr.appendChild(montaTd(paciente.imc,'info-imc'));
+	
+	
+	return pacienteTr;	
+	
+}
+
+
+function montaTd(dado, classe){
+	var td = document.createElement('td');
+	td.textContext = dado;
+	tb.classList.add(classe);
+	
+	return td;
+	
+}	
 
 
 
