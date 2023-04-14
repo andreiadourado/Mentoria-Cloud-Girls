@@ -13,6 +13,12 @@ botaoAdicionar.addEventListner('clik',function(event){ //"escutar" o clique do u
 	//criar tr e td do paciente
 	var pacienteTr = montaTr(paciente);
 	
+	if (!validaPaciente(paceiente)){
+		console.log('Paciente inválido!');
+		return; //sai da função antes de chegar na tabela
+		
+	}	
+	
 	//inserindo a linha criada na tabela
   	var tabela = document.querySelector('#tabela-pacientes');
 	tabela.appendChild(pacienteTr);
@@ -61,7 +67,19 @@ function montaTd(dado, classe){
 	
 	return td;
 	
+}
+
+function validaPaciente(paciente){
+	if (validaPeso(paciente.peso)){
+		return true;
+	}else{
+		return false;
+	}	
 }	
+
+
+	
+
 
 
 
