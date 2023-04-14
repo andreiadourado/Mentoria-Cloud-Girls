@@ -49,12 +49,19 @@ for (var i = 0; i<pacientes.length; i++){
 	var tdImc = paciente.querySelector('.info-imc');
 
 	if(pesoValido&&alturaValida){ //if e - só calcula o imc se peso e altura forem válidos
-	    var imc = peso / (altura * altura);
-	    tdImc.textContent = imc.toFixed(2);//fixando em duas casas decimais
+	    var imc = calculaImc(peso,altura);
+	    //tdImc.textContent = imc.toFixed(2);//fixando em duas casas decimais
 	}else{
 	    tdImc.textContent = 'Altura e/ou peso inválidos!';
-	}    
+	}   
+	
 
+}
+
+function calculaImc(peso,altura){
+	var imc = 0;
+	imc = peso / (altura * altura);
+	return imc.toFixed(2);
 }
 
 
