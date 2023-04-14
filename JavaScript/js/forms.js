@@ -40,7 +40,7 @@ function montaTr(paciente){
 	var pacienteTr = document.createElement('tr');
 	pacienteTr.classList.add('paciente'); //mantendo a mesma formatação
 	
-	//criar elemento no javascript para levar pro html (nova linha da tabela)
+	//criar elemento no javascript para levar pro html (nova linha da tabela).
 	
 	pacienteTr.appendChild(montaTd(paciente.nome,'info-nome'));
 	pacienteTr.appendChild(ontaTd(paciente.peso,'info-peso'));
