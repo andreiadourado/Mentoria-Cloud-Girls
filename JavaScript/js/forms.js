@@ -21,6 +21,13 @@ botaoAdicionar.addEventListner('clik',function(event){ //"escutar" o clique do u
 	var gorduraTd = document.createElement('td');
 	var imcTd = document.createElement('td');
 	
+	//passando os valores de cada coluna
+	nomeTd.textContext = nome;
+	pesoTd.textContext = peso;
+	alturaTd.textContext = altura;
+	gorduraTd.textContext = gordura;
+	imcTd.textContext = calculaImc(peso,altura);
+	
 	//colocar como elementos filhos
 	pacienteTr.appendChild(nomeTd);
 	pacienteTr.appendChild(alturaTd);
