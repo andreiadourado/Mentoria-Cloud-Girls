@@ -173,6 +173,27 @@ td, th {
     text-align: center;
     font-size: 2em; /*em: tamanho da fonte padrão*/
     margin: 0 0 1em;
+	clear:left;
+}
+
+p:first-line {
+    font-style: italic;
+}
+
+.titulo-principal:before {
+    content: "[";
+}
+
+.titulo-principal:after {
+    content:"]"
+}
+
+.itens:before {
+    content: "✰"
+}
+
+.titulo-principal:first-letter {
+    font-weight: bold;
 }
 
 .principal p {
