@@ -4,49 +4,66 @@
 
     <meta charset="UTF-8">
     <title>Barbearia Alura</title>
-    <link rel="stylesheet" href="style-home.css"> <!--trazendo o arquivo css-->
+    <link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css"><!--trazendo o arquivo css-->
     
 </head>
 
 <body>
 
-	<header> <!--tag header: cabeçalho-->
-	
-		<h1>Barbearia Alura</h1>
-	
+	<header>
+		<div class="caixa">
+			<h1><img src="logo.png"></h1>
+
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="produtos.html">Produtos</a></li>
+					<li><a href="contato.html">Contato</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
+
 	
 	<img id = 'banner' src='banner.jpg'> <!--adicionando uma imagem-->
 	
-	<div class='principal'> <!--tag div: divide o código em blocos de informações-->
-	
-		<h2 class= 'tituloCentralizado'>Sobre a Barbearia Alura</h2>
-
-		<p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
-
-		<p id = 'missao'><em>Nossa missão é:<strong>"Proporcionar auto-estima e qualidade de vida aos clientes"</strong>.</em></p> <!-tag id: para identificação específica no arquivo css->
-
-		<p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
+	<main>
+		<section class='principal'> <!--tag div: divide o código em blocos de informações-->
 		
-	</div>
-	
-	<div class= 'beneficios'>
-	
-		<h3 class= 'tituloCentralizado'>Benefícios</h3>
-		
-		<!--tag ul: lista não ordenada/ tag ol: lista ordenada/ tag li: identifica cada item da lista-->
-		<ul>
-		
-			<li class='itens'>Atendimento aos Clientes</li> <!--class: editar no css todos os itens da lista ao mesmo tempo sem generalizar pra todas as listas-->
-			<li class='itens'>Espaço diferenciado</li>
-			<li class='itens'>Localização</li>
-			<li class='itens'>Profissionais Qualificados</li>
+			<h2 class= 'tituloCentralizado'>Sobre a Barbearia Alura</h2>
+
+			<p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
+
+			<p id = 'missao'><em>Nossa missão é:<strong>"Proporcionar auto-estima e qualidade de vida aos clientes"</strong>.</em></p> <!-tag id: para identificação específica no arquivo css->
+
+			<p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
 			
-		</ul>
+		</section>
 		
-		<img src='beneficios.jpg' class = 'imagemBeneficios'>
+		<div class= 'beneficios'>
 		
-	</div>	
+			<h3 class= 'tituloCentralizado'>Benefícios</h3>
+			
+			<!--tag ul: lista não ordenada/ tag ol: lista ordenada/ tag li: identifica cada item da lista-->
+			<ul>
+			
+				<li class='itens'>Atendimento aos Clientes</li> <!--class: editar no css todos os itens da lista ao mesmo tempo sem generalizar pra todas as listas-->
+				<li class='itens'>Espaço diferenciado</li>
+				<li class='itens'>Localização</li>
+				<li class='itens'>Profissionais Qualificados</li>
+				
+			</ul>
+			
+			<img src='beneficios.jpg' class = 'imagemBeneficios'>
+			
+		</div>	
+	</main>
+
+	<footer> <!--rodapé-->
+		<img src="logo-branco.png">
+		<p class="copyright">&copy; Copyrigth Baarberia Alura - 2019</p>
+	</footer>
 	
 </body>
 
