@@ -173,6 +173,7 @@ td, th {
 
 .principal p {
     margin: 0 0 1em;
+	clear: left;
 }
 
 .principal strong {
@@ -186,6 +187,13 @@ td, th {
 .imagembeneficios {
     width: 60%
 }
+
+.utensilios {
+    width: 120px;
+	float: left; /*flutuação da imagem*/
+	margin: 0 20px 20px 0;
+}
+
 
 
 
