@@ -231,6 +231,7 @@ td, th {
 
 .beneficios {
     padding: 3em 0;
+	background: #888888;
 }
 
 .itens {
@@ -240,6 +241,31 @@ td, th {
 itens:first-child {
     font-weight: bold;
 }
+
+.principal {
+    padding: 3em 0;
+    background: #FEFEFE;
+	width: 940px;
+    margin: 0 auto;
+} 
+
+main {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.mapa-conteudo {
+    width: 940px;
+    margin: 0 auto;
+
+}
+
+.mapa {
+    padding:3em 0;
+    background: linear-gradient(#FEFEFE, #888888);
+}
+
+
 
 
 
