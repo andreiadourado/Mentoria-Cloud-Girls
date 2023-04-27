@@ -16,5 +16,19 @@ campo.on("input", function() { /*quando digitar, fazer algo*/
     var qtdCaracteres = conteudo.length;
     $("#contador-caracteres").text(qtdCaracteres);
 
+    /*desabilitando o campo em t=0*/
+    var tempoRestante = $("#tempo-digitacao").text();
+    campo.one("focus", function() { /*one: escuta o evento uma única vez */
+        var cronometroID = setInterval(function() {
+            tempoRestante--;
+            $("#tempo-digitacao").text(tempoRestante);
+            if (tempoRestante < 1) {
+                campo.attr("disabled", true);
+                clearInterval(cronometroID);
+            }
+        }, 1000);
+    });
+  
+
 });
 
