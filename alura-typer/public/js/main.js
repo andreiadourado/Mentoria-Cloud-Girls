@@ -43,9 +43,10 @@ function inicializaCronometro() {
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);
             if (tempoRestante < 1) {
-                campo.attr("disabled", true);
                 clearInterval(cronometroID);
-                campo.toggleClass("campo-desativado");
+                finalizaJogo();
+
+                inserePlacar();
             }
         }, 1000);
     });
@@ -59,4 +60,10 @@ function reiniciaJogo(){
     $("#tempo-digitacao").text(tempoInicial);
     inicializaCronometro();
     campo.toggleClass("campo-desativado");
+}
+
+function finalizaJogo() {
+    campo.attr("disabled", true);
+    campo.toggleClass("campo-desativado");
+    inserePlacar();
 }

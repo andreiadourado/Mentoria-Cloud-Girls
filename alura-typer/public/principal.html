@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Alura Typer</title>
     <link rel="stylesheet" href="css/libs/materialize.min.css"> <!--estilização-->
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
     <link rel="stylesheet" href="css/estilos.css"> 
 </head>
 
@@ -25,6 +26,29 @@
             <li><span id="contador-caracteres">0</span> caracteres</li>
             <li><span id="contador-palavras">0</span> palavras</li>
         </ul>
+
+        <section class="placar">
+            <h3 class="center">Placar</h3> <!--centraliza a tabela-->
+        <table class="centered bordered"> <!--adiciona linhas entre o nome dos jogadores-->
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>No. de palavras</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Douglas</td>
+                        <td>10</td>
+                        <td>
+                            <a href="#" class="botao-remover">
+                                <i class="small material-icons">delete</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
 
     <!--importação do jQuery-->
