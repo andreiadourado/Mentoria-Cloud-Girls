@@ -13,6 +13,8 @@ $(function(){
     inicializaContadores();
     inicializaCronometro();
     $("#botao-reiniciar").click(reiniciaJogo);
+
+    atualizaPlacar();
 });
 
 function atualizaTamanhoFrase(){
