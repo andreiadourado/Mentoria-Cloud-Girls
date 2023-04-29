@@ -19,3 +19,12 @@
 body {
     overflow: scroll; /*mantem o espaço da barra*/
 }
+
+#erro{
+    color: red;
+    display: none;
+}
+
+#spinner{
+    display: none;
+}
