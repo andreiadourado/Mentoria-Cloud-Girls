@@ -1,8 +1,8 @@
-var frase = $(".frase").text(); //$ -> jQuery -> querySelector | text -> pega o conteúdo de texto 
+/*var frase = $(".frase").text(); //$ -> jQuery -> querySelector | text -> pega o conteúdo de texto 
 var numPalavras = frase.split(" ").length; //contando as palavras
 
 var tamanhoFrase = $("#tamanho-frase");
-tamanhoFrase.text(numPalavras);
+tamanhoFrase.text(numPalavras);*/
 
 var tempoInicial = $("#tempo-digitacao").text();
 /*escutando o evento click na caixa de digitação*/
@@ -37,22 +37,35 @@ function inicializaContadores() {
     })
 }
 
+
+function inicializaMarcadores() {
+    campo.on("input", function() {
+        var frase = $(".frase").text();
+        var digitado = campo.val();
+        var comparavel = frase.substr(0, digitado.length);
+
+        if (digitado == comparavel) {
+            campo.addClass("borda-verde");
+            campo.removeClass("borda-vermelha");
+        } else {
+            campo.addClass("borda-vermelha");
+            campo.removeClass("borda-verde");
+        }
+    });
+}
+
 function inicializaCronometro() {
     /*desabilitando o campo em t=0*/
     campo.on("input", function(){
         var tempoRestante = $("#tempo-digitacao").text();    
-        campo.one("focus", function() { /*one: escuta o evento uma única vez */
-            var cronometroID = setInterval(function() {
-                tempoRestante--;
-                $("#tempo-digitacao").text(tempoRestante);
-                if (tempoRestante < 1) {
-                    clearInterval(cronometroID);
-                    finalizaJogo();
-
-                    inserePlacar();
-                }
-            }, 1000);
-        });
+        var cronometroID = setInterval(function() {
+            tempoRestante--;
+            $("#tempo-digitacao").text(tempoRestante);
+            if (tempoRestante < 1) {
+                clearInterval(cronometroID);
+                finalizaJogo();
+            }
+        }, 1000);
     });   
 }
 
