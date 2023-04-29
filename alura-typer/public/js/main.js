@@ -16,10 +16,12 @@ $(function(){
 });
 
 function atualizaTamanhoFrase(){
-    var frase = $(".frase").text();
-    var numPalavras  = frase.split(" ").length;
-    var tamanhoFrase = $("#tamanho-frase");
-    tamanhoFrase.text(numPalavras);
+    campo.on("input", function(){
+        var frase = $(".frase").text();
+        var numPalavras  = frase.split(" ").length;
+        var tamanhoFrase = $("#tamanho-frase");
+        tamanhoFrase.text(numPalavras);
+    }); 
 }
 
 function inicializaContadores() {
@@ -37,19 +39,21 @@ function inicializaContadores() {
 
 function inicializaCronometro() {
     /*desabilitando o campo em t=0*/
-    var tempoRestante = $("#tempo-digitacao").text();
-    campo.one("focus", function() { /*one: escuta o evento uma única vez */
-        var cronometroID = setInterval(function() {
-            tempoRestante--;
-            $("#tempo-digitacao").text(tempoRestante);
-            if (tempoRestante < 1) {
-                clearInterval(cronometroID);
-                finalizaJogo();
+    campo.on("input", function(){
+        var tempoRestante = $("#tempo-digitacao").text();    
+        campo.one("focus", function() { /*one: escuta o evento uma única vez */
+            var cronometroID = setInterval(function() {
+                tempoRestante--;
+                $("#tempo-digitacao").text(tempoRestante);
+                if (tempoRestante < 1) {
+                    clearInterval(cronometroID);
+                    finalizaJogo();
 
-                inserePlacar();
-            }
-        }, 1000);
-    });
+                    inserePlacar();
+                }
+            }, 1000);
+        });
+    });   
 }
 
 function reiniciaJogo(){
@@ -66,4 +70,18 @@ function finalizaJogo() {
     campo.attr("disabled", true);
     campo.toggleClass("campo-desativado");
     inserePlacar();
+}
+
+function trocaFraseAleatoria(data) {
+    var frase = $(".frase");
+    var numeroAleatorio = Math.floor(Math.random() * data.length);
+
+    frase.text(data[numeroAleatorio].texto);
+    atualizaTamanhoFrase();
+    atualizaTempoInicial(data[numeroAleatorio].tempo);
+}
+
+function atualizaTempoInicial(tempo) {
+    tempoInicial = tempo;
+    $("#tempo-digitacao").text(tempo);
 }
