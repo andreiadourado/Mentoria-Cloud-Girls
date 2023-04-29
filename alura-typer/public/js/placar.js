@@ -10,6 +10,9 @@ function inserePlacar() {
 
 
     corpoTabela.append(linha);
+
+    $(".placar").slideDown(500);
+    scrollPlacar();
 }
 
 function novaLinha(usuario, palavras) {
@@ -50,4 +53,13 @@ function removeLinha(event) {
 
 function mostraPlacar() {
     $(".placar").slideToggle(600); /*toggle: adiciona ou esconde um elemento- slide: suavizar a transição */
+}
+
+function scrollPlacar() {
+    var posicaoPlacar = $(".placar").offset().top;
+
+    $("body").animate(
+    {
+        scrollTop: posicaoPlacar + "px"
+    }, 1000);
 }
