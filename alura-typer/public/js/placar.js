@@ -44,5 +44,5 @@ function removeLinha(event) {
 
 
 function mostraPlacar() {
-    $(".placar").toggle(); /*toggle: adiciona ou esconde um elemento */
+    $(".placar").slideToggle(600); /*toggle: adiciona ou esconde um elemento- slide: suavizar a transição */
 }

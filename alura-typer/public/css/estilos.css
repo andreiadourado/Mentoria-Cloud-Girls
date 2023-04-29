@@ -15,3 +15,7 @@
 .placar {
     display: none;
 }
+
+body {
+    overflow: scroll; /*mantem o espaço da barra*/
+}
