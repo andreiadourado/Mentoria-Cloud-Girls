@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/libs/materialize.min.css"> <!--estilização-->
     <link rel="stylesheet" href="css/libs/google-fonts.css">
     <link rel="stylesheet" href="css/libs/selectize.default.css">
+    <link rel="stylesheet" href="css/libs/tooltipster.bundle.min.css" />
     <link rel="stylesheet" href="css/estilos.css"> 
 </head>
 
@@ -55,7 +56,9 @@
                </div>
 
             <input type="number" min="0" id="frase-id">
-            <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow">
+            <!-- principal.html-->
+
+            <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow tooltip" title="Sincronizado com sucesso">
                 <i class="material-icons">swap_vert</i>
             </a>
         </div>
@@ -90,6 +93,7 @@
     <script src="js/placar.js"></script>
     <script src="js/frases.js"></script>
     <script src="js/selectize.js"></script>
+    <script src="js/tooltipster.bundle.min.js"></script>
 
 </body>
 </html>
